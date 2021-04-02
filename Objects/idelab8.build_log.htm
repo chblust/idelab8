@@ -1,0 +1,145 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Chris chblust98@gmail.com, RIT, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      CMSIS_AGDI.dll V1.32.13.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\Users\chblu\Documents\idelab8\idelab8.uvprojx
+Project File Date:  04/02/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(42): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+    SIM_SOPT7 |= SIM_SOPT7_ADC0TRGSEL(0b1010);
+                                      ^
+main.c(50): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+    FTM2_SC |= FTM_SC_CLKS(0b01);
+                           ^
+main.c(12): warning: no previous prototype for function 'init_FTM2' [-Wmissing-prototypes]
+void init_FTM2(){
+     ^
+main.c(12): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void init_FTM2(){
+^
+static 
+main.c(12): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void init_FTM2(){
+              ^
+main.c(89): warning: implicit conversion when assigning computation result loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+                running_voltage *= 3.3;
+                                ~~ ^~~
+main.c(97): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                        if (running_voltage < (3.3/2.0))
+                            ^~~~~~~~~~~~~~~ ~
+main.c(105): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                        if (running_voltage > (3.3/2.0))
+                            ^~~~~~~~~~~~~~~ ~
+main.c(119): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+                        float freq = 1.0/(((float)ms_since_last_peak) / 1000.0);
+                              ~~~~   ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(119): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                        float freq = 1.0/(((float)ms_since_last_peak) / 1000.0);
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~  ~
+main.c(122): warning: implicitly declaring library function 'sprintf' with type 'int (char *, const char *, ...)' [-Wimplicit-function-declaration]
+                        sprintf(buf, "My Heartrate is %f Hz\r\n", freq); 
+                        ^
+main.c(122): note: include the header <stdio.h> or explicitly provide a declaration for 'sprintf'
+main.c(122): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                        sprintf(buf, "My Heartrate is %f Hz\r\n", freq); 
+                        ~~~~~~~                                   ^~~~
+main.c(66): warning: no previous prototype for function 'read_frequency' [-Wmissing-prototypes]
+int read_frequency(float new_voltage)
+    ^
+main.c(66): note: declare 'static' if the function is not intended to be used outside of this translation unit
+int read_frequency(float new_voltage)
+^
+static 
+main.c(129): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+main.c(138): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+ADC0VAL = ADC0_RA >> 4;
+        ~ ~~~~~~~~^~~~
+main.c(141): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        read_frequency(((float)ADC0VAL) / 4095.0);
+        ~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(141): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        read_frequency(((float)ADC0VAL) / 4095.0);
+                        ^~~~~~~~~~~~~~  ~
+main.c(135): warning: no previous prototype for function 'ADC0_IRQHandler' [-Wmissing-prototypes]
+void ADC0_IRQHandler(void) {
+     ^
+main.c(135): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ADC0_IRQHandler(void) {
+^
+static 
+main.c(145): warning: no previous prototype for function 'init_ADC0' [-Wmissing-prototypes]
+void init_ADC0(void) {
+     ^
+main.c(145): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void init_ADC0(void) {
+^
+static 
+main.c(190): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+main.c(132): warning: no previous extern declaration for non-static variable 'ADC0VAL' [-Wmissing-variable-declarations]
+uint16_t ADC0VAL;
+         ^
+main.c(132): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint16_t ADC0VAL;
+^
+20 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=7464 RO-data=1216 RW-data=0 ZI-data=1184  
+".\Objects\idelab8.axf" - 0 Error(s), 20 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_K60_DFP.1.5.0.pack
+                Keil.Kinetis_K60_DFP.1.5.0
+                NXP Kinetis K60 Series Device Support and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\chblu\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\chblu\AppData\Local\Arm\Packs\Keil\Kinetis_K60_DFP\1.5.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\system_MK64F12.c
+      Source file:   Device\Source\ARM\startup_MK64F12.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
